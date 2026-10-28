@@ -170,7 +170,8 @@ class AdvancedReplaceText:
             try:
                 text = re.sub(find, replace, text)
             except (re.error, IndexError) as error:
-                print(f"{LOG_PREFIX} Skipped find_{number}, since it couldn't be used as a regular expression: {error}")
+                # The error isn't included, since it can quote part of the find box.
+                print(f"{LOG_PREFIX} Skipped find_{number}, since it isn't a valid regular expression")
         return (passthrough, text)
 
 

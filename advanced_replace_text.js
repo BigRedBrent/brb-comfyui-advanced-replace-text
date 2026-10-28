@@ -166,12 +166,13 @@ function fillSettings(value) {
             found = nodes.filter((node) => node.title === split[0]);
         }
         if (!found.length) {
-            console.warn(`${LOG_PREFIX} No node named "${split[0]}" for ${match}`);
+            // The token itself isn't included, since names and text in the boxes can be private.
+            console.warn(`${LOG_PREFIX} A token was left as is, since no node has the name it uses`);
             return match;
         }
         const widget = (found[0].widgets || []).find((item) => item.name === split[1]);
         if (!widget) {
-            console.warn(`${LOG_PREFIX} The node "${split[0]}" has no setting "${split[1]}" for ${match}`);
+            console.warn(`${LOG_PREFIX} A token was left as is, since its node has no setting with the name it uses`);
             return match;
         }
         return String(widget.value ?? "").replaceAll(/[/?<>\\:*|"\x00-\x1F\x7F]/g, "_");
