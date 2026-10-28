@@ -1,0 +1,12 @@
+[project]
+name = "brb-comfyui-advanced-replace-text"
+version = "0.0.0"
+description = "A ComfyUI node that fills in tokens like the date and finds and replaces text, with find and replace pairs that grow as you use them, and a passthrough so the date can be taken right before saving."
+license = { file = "LICENSE" }
+
+[project.urls]
+Repository = "https://github.com/BigRedBrent/brb-comfyui-advanced-replace-text"
+
+[tool.comfy]
+PublisherId = "bigredbrent"
+DisplayName = "Advanced Replace Text"
